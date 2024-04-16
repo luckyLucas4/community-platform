@@ -16,6 +16,7 @@ import { NotFoundPage } from './NotFound/NotFound'
 import {
   COMMUNITY_PAGES_PROFILE,
   getAvailablePageList,
+  MY_PAGES,
   NO_HEADER_PAGES,
   POLICY_PAGES,
 } from './PageList'
@@ -37,6 +38,7 @@ export const Pages = () => {
     ...COMMUNITY_PAGES_PROFILE,
     ...NO_HEADER_PAGES,
     ...POLICY_PAGES,
+    ...MY_PAGES
   ]
 
   return (

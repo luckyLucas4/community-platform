@@ -8,6 +8,7 @@ export enum MODULE {
   ACADEMY = 'academy',
   USER = 'user',
   QUESTION = 'question',
+  MY_PAGE = 'myPage'
 }
 
 export const getSupportedModules = (): MODULE[] => {

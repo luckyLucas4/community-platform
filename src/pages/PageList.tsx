@@ -51,6 +51,10 @@ const Patreon = lazy(
   () => import(/* webpackChunkName: "terms" */ './Patreon/Patreon'),
 )
 
+const MyPage = lazy(
+  () => import('./MyPage/MyPage'),
+)
+
 export const getAvailablePageList = (supportedModules: MODULE[]): IPageMeta[] =>
   COMMUNITY_PAGES.filter((pageItem) =>
     supportedModules.includes(pageItem.moduleName),
@@ -66,6 +70,14 @@ export interface IPageMeta {
   fullPageWidth?: boolean
   customStyles?: CSSObject
   requiredRole?: UserRole
+}
+
+const myPage = {
+  moduleName: MODULE.MY_PAGE,
+  path: 'my-page',
+  component: <MyPage />,
+  title: 'My Page',
+  description: 'This is my own test page'
 }
 
 const howTo = {
@@ -196,3 +208,5 @@ export const NO_HEADER_PAGES: IPageMeta[] = [
   QuestionModule,
   patreon,
 ]
+
+export const MY_PAGES: IPageMeta[] = [myPage]
